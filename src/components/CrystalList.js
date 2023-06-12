@@ -1,12 +1,18 @@
+// React component files NEED to start with a capital letter!
 import React from 'react';
+import Crystal from './Crystal';
 
 
 const CrystalList = () => {
     return (
         <section>
-            <h2>Crystal List</h2>
+            <h2>~Crystal List~</h2>
             <ul>
-                <li>Crystal Component</li>
+                <Crystal />
+                <Crystal />
+                <Crystal />
+                <Crystal />
+                <Crystal />
             </ul>
         </section>
     );
