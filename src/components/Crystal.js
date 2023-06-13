@@ -2,12 +2,15 @@
 // (i.e., Crystal.js, NOT crystal.js)
 import React from 'react';
 
-const Crystal = () => {
+const Crystal = ({ name, color, powers }) => {
+    // name="Amethyst";
+    // color="Purple";
+    // powers ="super powers";
     return (
         <li>
-            <h2>Crystal Name</h2>
-            <p>Crystal Color</p>
-            <p>Crystal Powers</p>
+            <h2>{name}</h2>
+            <p>{color}</p>
+            <p>{powers}</p>
             <button>Charge Crystal</button>
         </li>
     );
