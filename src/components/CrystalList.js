@@ -5,7 +5,7 @@ import Crystal from './Crystal';
 
 
 
-const CrystalList = ({ crystals, increaseCharge }) => {
+const CrystalList = ({ crystals, increaseCharge, removeCrystal }) => {
 
     const crystalComponents = crystals.map(
         (crystal) => {
@@ -18,6 +18,7 @@ const CrystalList = ({ crystals, increaseCharge }) => {
                     powers={crystal.powersData} 
                     charges={crystal.charges}
                     increaseCharge={increaseCharge}   
+                    removeCrystal={removeCrystal}
                     />
                     </li>
             );

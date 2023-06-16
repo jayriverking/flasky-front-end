@@ -53,20 +53,31 @@ function App() {
     })
   }
 
-const totalCharges = () => {
-  let total = 0;
-  for (let crystal of crystals){
-    total += crystal.charges
+  const removeCrystal = (id) => {
+    setCrystals(prevCrystals => {
+      const updatedCrystals = prevCrystals.filter(
+        // for crystals that DON'T meet the below conditions, return those crystals
+        crystal => crystal.id !== id
+      )
+      return updatedCrystals
+    })
   }
-  return total
-}
+
+
+  const totalCharges = () => {
+    let total = 0;
+    for (let crystal of crystals){
+      total += crystal.charges
+    }
+    return total
+  }
 
   return (
     // React always wants a PARENT element; make sure your elements are ALWAYS wrapped in a div (semantic html is better, i.e., main, i.e, header)
     <main className="App">
       <h1>The Crystal Cove</h1>
       <p>Total charges: {totalCharges()}</p>
-      <CrystalList crystals={crystals} increaseCharge={increaseCharge} />
+      <CrystalList crystals={crystals} increaseCharge={increaseCharge} removeCrystal={removeCrystal}/>
     </main>
   );
 }

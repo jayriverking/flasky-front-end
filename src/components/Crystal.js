@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // useState (or other Hooks) must be used inside a React
 // component (function)
 
-const Crystal = ({ name, color, powers, id, charges, increaseCharge }) => {
+const Crystal = ({ name, color, powers, id, charges, increaseCharge, removeCrystal }) => {
     // const [charge, setCharge] = React.useState(0) IS THE SAME AS const [charge, setCharge] = useState(0), but without importing useState separately above(just importing React)
     // const [charge, setCharge] = useState(0);
     return (
@@ -17,6 +17,7 @@ const Crystal = ({ name, color, powers, id, charges, increaseCharge }) => {
             <p>{powers}</p>
             <button onClick={() => increaseCharge(id)}>Charge Crystal</button>
             <p>Crystal charged {charges} times</p>
+            <button onClick={() => removeCrystal(id)}>Remove Crystal</button>
         </>
     );
 }
